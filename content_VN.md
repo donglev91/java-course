@@ -10,7 +10,10 @@
 - **Java version history**
   - Java SE 23 is the latest version (released 17/9/2024)
   - while versions 21, 17, 11 and 8 are the currently supported long-term support (LTS) versions, where Oracle Customers will receive Oracle Premier Support
-https://en.wikipedia.org/wiki/Java_version_history
+  https://en.wikipedia.org/wiki/Java_version_history
+  - **Rankings 2024**
+  https://www.techrepublic.com/article/tiobe-index-language-rankings/?form=MG0AV3
+    ![Example Image](images/20241112-tiobe-index-language-rankings.png)
 
 ## Các thành phần cơ bản của Java
 - **JDK (Java Development Kit):**
@@ -34,13 +37,14 @@ https://en.wikipedia.org/wiki/Java_version_history
       }
   }
 
-# Hướng dẫn tạo tài khoản GitHub và đẩy code lên GitHub
+# Hướng dẫn tạo tài khoản GitHub và đẩy code lên GitHub (Maybe reuse)
 
 ## Bước 1: Tạo tài khoản GitHub
 1. Truy cập trang web [github.com](https://github.com) và nhấn vào nút **Sign up**.
 2. Nhập thông tin cá nhân của bạn bao gồm địa chỉ email, mật khẩu, và tên người dùng. 
 3. Xác nhận email của bạn thông qua email mà GitHub gửi đến.
 4. Hoàn thành các bước hướng dẫn còn lại để thiết lập tài khoản của bạn.
+5. upload ssh key
 
 ## Bước 2: Thiết lập Git trên máy tính
 1. Tải và cài đặt Git từ trang web [git-scm.com](https://git-scm.com).
@@ -72,11 +76,13 @@ git push -u origin master
   - **String:** `String`
   - **Ví dụ:**
     ```java
-    int age = 25;
-    float height = 5.8f;
-    char gender = 'M';
-    boolean isStudent = true;
-    String name = "John";
+    class Person {
+        int age = 25;
+        float height = 5.8f;
+        char gender = 'M';
+        boolean isStudent = true;
+        String name = "John";
+    }
     ```
 
 ## Các toán tử
@@ -115,17 +121,15 @@ git push -u origin master
 - **Mảng (Array):**
   - Mảng là cấu trúc dữ liệu lưu trữ nhiều giá trị có cùng kiểu dữ liệu.
   - Các phần tử trong mảng được lưu trữ liên tiếp nhau trong bộ nhớ.
-  - Cú pháp khai báo mảng:
+  - Cú pháp khai báo và truy cập mảng:
     ```java
-    int[] arr = new int[10]; // Khai báo mảng kiểu int với 10 phần tử
-    int[] numbers = {1, 2, 3, 4, 5}; // Khởi tạo mảng với các giá trị ban đầu
+    class ArraySample {
+        int[] arr = new int[10]; // Khai báo mảng kiểu int với 10 phần tử
+        int[] numbers = {1, 2, 3, 4, 5}; // Khởi tạo mảng với các giá trị ban đầu
+        int firstElement = numbers[0]; // Truy cập phần tử đầu tiên
+        numbers[2] = 10; // Gán giá trị cho phần tử thứ 3
+    }
     ```
-  - Truy cập phần tử trong mảng:
-    ```java
-    int firstElement = numbers[0]; // Truy cập phần tử đầu tiên
-    numbers[2] = 10; // Gán giá trị cho phần tử thứ 3
-    ```
-
 ## Đối tượng
 - **Đối tượng (Object):**
   - Đối tượng là thực thể có trạng thái và hành vi.
@@ -170,13 +174,14 @@ git push -u origin master
   - Cú pháp sử dụng HashMap:
     ```java
     import java.util.HashMap;
+    class HashMapSample {
+      HashMap<String, Integer> map = new HashMap<>();
+      map.put("apple", 10);
+      map.put("banana", 20);
 
-    HashMap<String, Integer> map = new HashMap<>();
-    map.put("apple", 10);
-    map.put("banana", 20);
-
-    int value = map.get("apple"); // Truy cập giá trị thông qua key
-    System.out.println("Value of apple: " + value);
+      int value = map.get("apple"); // Truy cập giá trị thông qua key
+      System.out.println("Value of apple: " + value);
+    }
     ```
 
 ## ArrayList và List
