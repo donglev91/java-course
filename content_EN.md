@@ -1,12 +1,16 @@
-# Làm quen: Why && how
+# Why && how
 
 ## History
-- **Java là gì?** 
-  - Java là một ngôn ngữ lập trình hướng đối tượng, được thiết kế để có thể chạy trên nhiều nền tảng khác nhau.
-- **Viết ra bởi ai?**
-  - Được phát triển bởi Sun Microsystems (hiện nay là một phần của Oracle Corporation), đặc biệt là bởi James Gosling và đội ngũ của ông vào những năm 1990.
-- **Tại sao dùng Java trong thời điểm ấy? Java giải quyết bài toán gì?**
-  - Java được thiết kế để giải quyết vấn đề về tính tương thích và khả năng di động của phần mềm. Bằng cách sử dụng mô hình "viết một lần, chạy mọi nơi" (Write Once, Run Anywhere), Java giúp các nhà phát triển có thể viết mã một lần và chạy trên bất kỳ nền tảng nào hỗ trợ Java mà không cần sửa đổi nhiều.
+- **Java** 
+  - Object-oriented programming language
+  - Designed to run on multiple platforms
+- **Origin**
+  - Developed by James Gosling and his team at Sun Microsystems in the early 1990s
+  - Now maintained/deloped by Oracle Corporation(acquired Sun Microsystems in 2010)
+- **Why use Java at that time? What problem to solve**
+  - Key issues: 
+    - Compatibility: run on different hardware or OS without requiring modifications
+    - portability: easily transferred from one environment to another
 
 ## Các thành phần cơ bản của Java
 - **JDK (Java Development Kit):**
