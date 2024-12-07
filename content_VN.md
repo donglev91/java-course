@@ -7,6 +7,10 @@
   - Được phát triển bởi Sun Microsystems (accquired by Oracle Corporation - 2010), đặc biệt là bởi James Gosling và đội ngũ của ông vào những năm 1990.
 - **Tại sao dùng Java trong thời điểm ấy? Java giải quyết bài toán gì?**
   - Java được thiết kế để giải quyết vấn đề về tính tương thích(compatibility) và khả năng di động(portability) của phần mềm. Bằng cách sử dụng mô hình "viết một lần, chạy mọi nơi" (Write Once, Run Anywhere), Java giúp các nhà phát triển có thể viết mã một lần và chạy trên bất kỳ nền tảng nào hỗ trợ Java mà không cần sửa đổi nhiều.
+- **Java version history**
+  - Java SE 23 is the latest version (released 17/9/2024)
+  - while versions 21, 17, 11 and 8 are the currently supported long-term support (LTS) versions, where Oracle Customers will receive Oracle Premier Support
+https://en.wikipedia.org/wiki/Java_version_history
 
 ## Các thành phần cơ bản của Java
 - **JDK (Java Development Kit):**
