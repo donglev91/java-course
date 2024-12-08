@@ -1,15 +1,32 @@
 # Làm quen: Why && how
 
 ## History
-- **Java là gì?** 
+- **What is Java?** 
   - Java là một ngôn ngữ lập trình hướng đối tượng, được thiết kế để có thể chạy trên nhiều nền tảng khác nhau.
+  - Ước tính có hơn 3 tỉ thiết bị chạy Java
+  - Java được dùng cho:
+      - Mobile applications (Android)
+      - Desktop applications
+      - Web applications
+      - Web servers and application servers
+      - Games
+      - Database connection
+      - And much, much more!
 - **Viết ra bởi ai?**
-  - Được phát triển bởi Sun Microsystems (accquired by Oracle Corporation - 2010), đặc biệt là bởi James Gosling và đội ngũ của ông vào những năm 1990.
+  - Được phát triển bởi Sun Microsystems (accquired by Oracle Corporation - 2010), đặc biệt là bởi James Gosling và đội ngũ của ông vào những năm 1990. First release 1995
 - **Tại sao dùng Java trong thời điểm ấy? Java giải quyết bài toán gì?**
   - Java được thiết kế để giải quyết vấn đề về tính tương thích(compatibility) và khả năng di động(portability) của phần mềm. Bằng cách sử dụng mô hình "viết một lần, chạy mọi nơi" (Write Once, Run Anywhere), Java giúp các nhà phát triển có thể viết mã một lần và chạy trên bất kỳ nền tảng nào hỗ trợ Java mà không cần sửa đổi nhiều.
+- **Why Java?**
+  - Chạy được trên nhiều platforms: Windows, Mac, Linux, Raspberry Pi, etc.
+  - Nhiều job
+  - Dễ học và lập trình
+  - Open-source and miễn phí
+  - Secure, fast and powerful
+  - Cộng đồng support rất lớn
+  - OOP: clear structure; code dùng lại được; giảm chi phí phát triển
 - **Java version history**
   - Java SE 23 is the latest version (released 17/9/2024)
-  - while versions 21, 17, 11 and 8 are the currently supported long-term support (LTS) versions, where Oracle Customers will receive Oracle Premier Support
+  - Long-term support (LTS) versions: 21, 17, 11 and 8 - Will receive Oracle Premier Support
   https://en.wikipedia.org/wiki/Java_version_history
   - **Rankings 2024**
   https://www.techrepublic.com/article/tiobe-index-language-rankings/?form=MG0AV3
@@ -27,7 +44,20 @@
     - các thư viện cần thiết để chạy các ứng dụng được phát triển bằng Java.
   - Usage: require for run application
 
-## Viết test Java Hello world
+## Start
+### IDE
+- Có nhiều loại IDE: IntelliJ, Eclipse, Netbean, VSCode, Vim ...
+- Khuyên dùng: IntelliJ. Nhu cầu cơ bản thì bản Community là đủ
+
+### Java install
+- Dùng luôn IntelliJ để install Java
+- Các bước:
+  - ![Example Image](images/java-install-1.png)
+  - ![Example Image](images/java-install-2.png)
+  - ![Example Image](images/java-install-3.png)
+
+### Hello world
+
 - **Bước 1:** Tạo một Java file và đặt tên là `HelloWorld.java`.
 - **Bước 2:** Viết Java source code cơ bản:
   ```java
@@ -63,9 +93,49 @@ git push -u origin master
 
 # Cú pháp cơ bản
 
+## Java Output
+- Java supports some methods to output values
+```java
+System.out.println("Hello World!"); // print with new line
+System.out.print("Hello World!"); // print without new line
+System.out.print(2024); // print 2024
+```
+
+## Java comment
+- explain code, more readable
+- prevent some code run when testing/debugging
+- // for short comments, and /* */ for longer.
+- java doc
+```java
+System.out.println("Hello World!"); // This is a single-line comment
+/* This is a 
+long comment
+*/
+System.out.println("Hello World!");
+
+/**
+ * Calculates the sum of two integers.
+ * 
+ * @param a The first integer.
+ * @param b The second integer.
+ * @return The sum of the two integers.
+ */
+public static int sum(int a, int b) {
+    return a + b;
+}
+
+
+```
+
 ## Biến, hằng, các kiểu dữ liệu
 - **Biến:** Dùng để lưu trữ giá trị, có thể thay đổi trong quá trình thực thi (execution) chương trình.
   - Cú pháp khai báo biến: `int age = 10;`
+  - rules:
+      - can contain letters, digits, underscores, and dollar signs
+      - must begin with a letter or $ _
+      - should start with a lowercase letter, and cannot contain whitespace
+      - are case-sensitive ("myVar" vs. "myvar")
+      - NOT Java keywords, e.g. boolean
 - **Hằng:** Giá trị cố định không thay đổi.
   - Cú pháp khai báo hằng: `final int MAX = 100;`
 - **Các kiểu dữ liệu:**
@@ -82,6 +152,7 @@ git push -u origin master
         char gender = 'M';
         boolean isStudent = true;
         String name = "John";
+        System.out.println("Hello " + name); // display name variable
     }
     ```
 
