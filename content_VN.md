@@ -57,7 +57,6 @@
   - ![Example Image](images/java-install-3.png)
 
 ### Hello world
-
 - **Bước 1:** Tạo một Java file và đặt tên là `HelloWorld.java`.
 - **Bước 2:** Viết Java source code cơ bản:
   ```java
@@ -155,23 +154,31 @@ public static int sum(int a, int b) {
         System.out.println("Hello " + name); // display name variable
     }
     ```
+- **Primitive Data vs. Non-Primitive Data Types:**
+- ![Example Image](images/primitive vs non-primitive.png)
+- **Type Casting:** Chuyển đổi 1 kiểu dữ liệu này sang kiểu khác
+  - **Widening casting (automatically):** Chuyển từ kiểu dự liệu nhỏ sang lớn, không bị mất dữ liệu.
+    - byte -> short -> char -> int -> long -> float -> double
+  - **Narrowing Casting (manually):** Chuyển từ kiểu dữ liệu lớn sang nhỏ, cần xác minh cẩn thận
+    - double -> float -> long -> int -> char -> short -> byte
+  ```java
+  int intValue = 100;
+  long longValue = intValue; // Implicit casting từ int sang long -> result: 100
+
+  double doubleValue = 9.78;
+  int intValue = (int) doubleValue; // Explicit casting từ double sang int -> result: 9
+  ```
+
 
 ## Các toán tử
-- **Logic:** 
-  - AND: `&&`
-  - OR: `||`
-  - NOT: `!`
 - **Arithmetic Operators(Số học):**
-  - Cộng: `+`
-  - Trừ: `-`
-  - Nhân: `*`
-  - Chia: `/`
-  - Chia lấy dư: `%`
-- **Unary Operators(Một ngôi):**
-  - Tăng: `++`
-  - Giảm: `--`
-  - Dấu âm: `-`
-  - Dấu dương: `+`
+  - ![Example Image](images/arithmetic-operators.png)
+- **Assignment Operators (Phép gán):**
+  - ![Example Image](images/assignment-operators.png)
+- **Comparison Operators (Phép so sánh):**
+  - ![Example Image](images/comparison-operators.png)
+- **Comparison Operators (Phép so sánh):**
+  - ![Example Image](images/logical-operators.png)
 - **Ví dụ:**
   ```java
   int x = 10;
@@ -185,6 +192,30 @@ public static int sum(int a, int b) {
   x++; // 11
   y--; // 19
 
+## String
+- Dùng để lưu trữ text
+### String methods
+  - ![Example Image](images/string-methods-2.png)
+### Kết hợp String
+  - Toán tử +
+  - concat() method
+  - StringBuilder hoặc StringBuffer
+  ```java
+  String str1 = "Hello";
+  String str2 = "World";
+  // 3 cách đều ra kết quả: "Hello, World!"
+  String result1 = str1 + ", " + str2 + "!";
+  String result2 = str1.concat(", ").concat(str2).concat("!");
+  StringBuilder sb = new StringBuilder();
+  sb.append("Hello");
+  sb.append(", ");
+  sb.append("World");
+  sb.append("!");
+  String result3 = sb.toString();
+  ```
+  - Nên dùng cách nào?
+    - toán tử + và concat() method: Đơn giản, dễ đọc, nhưng hiệu suất kém vì tạo ra String object mới mỗi lần kết hợp String
+    - StringBuilder (không đồng bộ)/StringBuffer (đồng bộ): Hiệu suất tốt hơn
 
 # Kiểu dữ liệu nâng cao
 
@@ -387,30 +418,30 @@ public class ExceptionExample {
   import java.time.ZonedDateTime;
 
   public class DateTimeExample {
-      public static void main(String[] args) {
-          // LocalDate example
-          LocalDate date = LocalDate.now();
-          System.out.println("Current date: " + date); // Current date: 2024-12-07
+    public static void main(String[] args) {
+      // LocalDate example
+      LocalDate date = LocalDate.now();
+      System.out.println("Current date: " + date); // Current date: 2024-12-07
 
-          // LocalTime example
-          LocalTime time = LocalTime.now();
-          System.out.println("Current time: " + time); // Current time: 09:11:12.823263400
+      // LocalTime example
+      LocalTime time = LocalTime.now();
+      System.out.println("Current time: " + time); // Current time: 09:11:12.823263400
 
-          // LocalDateTime example
-          LocalDateTime dateTime = LocalDateTime.now();
-          System.out.println("Current date and time: " + dateTime); // Current date and time: 2024-12-07T09:11:12.823263400
+      // LocalDateTime example
+      LocalDateTime dateTime = LocalDateTime.now();
+      System.out.println("Current date and time: " + dateTime); // Current date and time: 2024-12-07T09:11:12.823263400
 
-          // ZonedDateTime example
-          ZonedDateTime zonedDateTime = ZonedDateTime.now();
-          System.out.println("Current date and time with timezone: " + zonedDateTime); // Current date and time with timezone: 2024-12-07T09:11:12.824262+07:00[Asia/Saigon]
-      }
+      // ZonedDateTime example
+      ZonedDateTime zonedDateTime = ZonedDateTime.now();
+      System.out.println("Current date/time with timezone: " + zonedDateTime); // Current date/time with timezone: 2024-12-07T09:11:12.824262+07:00[Asia/Saigon]
+    }
   }
 
 
-# Advanced Syntax: Conditions, Loops, Methods
+# Advanced Syntax: Conditions, Loops
 
 ## Conditions
-- **If-Else Statement:** Used to execute a block of code based on a condition.
+- **If-Else:** Thực thi code với điều kiện cụ thể
   ```java
   int number = 10;
   if (number > 0) {
@@ -420,8 +451,9 @@ public class ExceptionExample {
   } else {
       System.out.println("Number is zero");
   }
+  ```
 
-- **Switch Statement:** Used to execute one block of code among many options.
+- **Switch:** Thực thi code với nhiều lựa chọn.
 ```java
 int day = 3;
 switch (day) {
@@ -438,6 +470,62 @@ switch (day) {
         System.out.println("Invalid day");
         break;
 }
+```
 
+## Loops
+- **For:** Lặp lại một khối lệnh với số lần xác định trước, dựa trên biểu thức khởi tạo, điều kiện và biểu thức cập nhật
+```java
+for (int i = 1; i <= 5; i++) {
+    System.out.print(i + " ");
+}
+// Kết quả: 1 2 3 4 5
+```
+
+- **For-each**: Duyệt qua các phần tử trong collection
+```java
+int[] numbers = {1, 2, 3, 4, 5};
+for (int num : numbers) {
+    System.out.println(num + " ");
+}
+// Kết quả: 1 2 3 4 5
+```
+- **While:** Lặp lại code khi điều kiện vẫn đúng
+```java
+int i = 1;
+while (i <= 5) {
+    System.out.print(i + " ");
+    i++;
+}
+// Kết quả: 1 2 3 4 5
+```
+
+- **Do-While:** Tương tự như vòng lặp while, nhưng code được thực hiện ít nhất một lần trước khi kiểm tra điều kiện.
+```java
+int i = 1;
+while (i <= 5) {
+    System.out.print(i + " ");
+    i++;
+}
+// Kết quả: 1 2 3 4 5
+```
+
+- **Break/Continue:** Điều khiển luồng thực thi: Thoát khỏi vòng lặp(break) hoặc bỏ qua các lần lặp (continue)
+```java
+for (int i = 1; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    System.out.print(i + " ");
+}
+// Kết quả: 1 2 3 4
+
+for (int i = 1; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    System.out.print(i + " ");
+}
+// Kết quả: 1 2 3 4 6 7 8 9 
+```
 
 
